@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#D85F9F"
+    tools:context=".Home">
+
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_marginTop="10dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="350dp"
+            android:background="@drawable/ic_menu"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
+    </FrameLayout>
+
+    <!-- Container for contents of drawer - use NavigationView to make configuration easier -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/menu1"
+        app:headerLayout="@layout/nav_header"
+        android:fitsSystemWindows="true" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <Button
+            android:id="@+id/button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_them"
+            android:layout_marginTop="600dp"
+            android:layout_marginLeft="350dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="0dp"
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:queryHint="Nhập từ khóa để tìm kiếm" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                >
+
+                <Button
+                    android:id="@+id/btn_goiy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#F6F6F6"
+                    android:text="Gợi ý"
+                    android:textColor="@color/black"
+
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    app:rippleColor="#fff" />
+
+                <Button
+                    android:id="@+id/btn_thucan"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#F6F6F6"
+                    android:text="Thức ăn"
+                    android:textColor="@color/black"
+                    android:textSize="10dp"
+
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_phukien"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#F6F6F6"
+                    android:text="Phụ kiện"
+                    android:textColor="@color/black"
+                    android:textSize="10dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_quanao"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#F6F6F6"
+                    android:text="Quần áo"
+                    android:textColor="@color/black"
+                    android:textSize="10dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv"
+                android:layout_width="match_parent"
+                android:layout_height="570dp"/>
+
+
+
+        </LinearLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_nav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:background="@color/white"
+            android:itemBackground="#fff"
+            app:itemBackground="@color/white"
+            app:itemIconTint="#000"
+            app:itemTextColor="@color/black"
+            app:menu="@menu/bottom_nav"
+            />
+
+
+    </RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
