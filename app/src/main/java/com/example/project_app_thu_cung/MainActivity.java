@@ -30,7 +30,7 @@ import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
 public class MainActivity extends AppCompatActivity {
-    TextView txtsdt,txtmatkhau,txtnhaplaimatkhau;
+    TextView txtsdt,txtmatkhau,txtnhaplaimatkhau,txtdanhnhap;
     Button btndangki;
     ImageButton btnfb;
     @Override
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         }, PackageManager.PERMISSION_GRANTED);
 
         txtsdt = findViewById(R.id.txtsdt);
-
+        txtdanhnhap = findViewById(R.id.txtDangnhap);
         txtmatkhau =findViewById(R.id.txtmatkhau);
         txtnhaplaimatkhau= findViewById(R.id.txtnhapmatkhaulai);
 
@@ -93,10 +93,20 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        txtdanhnhap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
     }
     public void openMaOTP(){
         Intent intent = new Intent(this ,MaOTP.class);
+        startActivity(intent);
+    }
+    public void opendanhnhap(){
+        Intent intent = new Intent(this ,login.class);
         startActivity(intent);
     }
 }

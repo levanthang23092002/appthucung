@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="#D85F9F"
+    android:background="#FFFFFF"
     tools:context=".Home">
 
     <FrameLayout
@@ -73,24 +73,23 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="#F6F6F6"
+                    android:backgroundTint="#FFFFFF"
                     android:text="Gợi ý"
                     android:textColor="@color/black"
-
                     android:textSize="10dp"
                     android:textStyle="bold"
-                    app:rippleColor="#fff" />
+                    app:rippleColor="#FFFF90CB" />
 
                 <Button
                     android:id="@+id/btn_thucan"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="#F6F6F6"
+                    android:backgroundTint="#FFFFFFFF"
                     android:text="Thức ăn"
                     android:textColor="@color/black"
                     android:textSize="10dp"
-
+                    app:rippleColor="#FFFF90CB"
                     android:textStyle="bold" />
 
                 <Button
@@ -98,10 +97,11 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="#F6F6F6"
+                    android:backgroundTint="#FFFFFFFF"
                     android:text="Phụ kiện"
                     android:textColor="@color/black"
                     android:textSize="10dp"
+                    app:rippleColor="#FFFF90CB"
                     android:textStyle="bold" />
 
                 <Button
@@ -109,10 +109,11 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="#F6F6F6"
+                    android:backgroundTint="#FFFFFFFF"
                     android:text="Quần áo"
                     android:textColor="@color/black"
                     android:textSize="10dp"
+                    app:rippleColor="#FFFF90CB"
                     android:textStyle="bold" />
             </LinearLayout>
 

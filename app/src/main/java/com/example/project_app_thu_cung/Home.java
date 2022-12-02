@@ -49,9 +49,39 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         initUI();
         getListLoaiSpFromRealtimeFireBase();
-        arrayList = new ArrayList<>();
+        btn_gy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                initUI();
+                getListLoaiSpFromRealtimeFireBase();
+            }
+        });
+        btn_ta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                initUI();
+                getList_thucan();
 
-        
+            }
+        });
+        btn_pk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getList_phukien();
+            }
+        });
+        btn_qa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getList_quanao();
+            }
+        });
+
+
+//        ref = FirebaseDatabase.getInstance().getReference();
+//        sp = new SanPham("thang","thang dep trai","1234đ","https://4cepet.com/cdn1/images/202011/thumb_article/huong-dan-cach-may-ao-cho-meo-cuc-ky-don-gian-thumb-1605045181.jpg");
+//
+//        ref.child("SanPham").child("GoiY").push().setValue(sp);
 
 
 
@@ -62,13 +92,28 @@ public class Home extends AppCompatActivity {
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
-                        // set item as selected to persist highlight
-                        menuItem.setChecked(true);
-                        // close drawer when item is tapped
-                        mDrawerLayout.closeDrawers();
 
-                        // Add code here to update the UI based on the item selected
-                        // For example, swap UI fragments here
+                        switch (menuItem.getItemId())
+                        {
+                            case R.id.action_hom:
+                                Intent intent = new Intent(Home.this, Home.class);
+                                startActivity(intent);
+
+                                break;
+                            case R.id.action_giohang:
+                                Intent intent1 = new Intent(Home.this, ShoppingCartActivity.class);
+                                startActivity(intent1);
+                                break;
+                            case R.id.action_thongbao:
+                                Intent intent2 = new Intent(Home.this, Thong_tin_ca_nhan.class);
+                                startActivity(intent2);
+                                break;
+//                            case R.id.action_canhan:
+//                                Intent intent3 = new Intent(Home.this, .class);
+//                                startActivity(intent3);
+//                                break;
+
+                        }
 
                         return true;
                     }
@@ -100,8 +145,6 @@ public class Home extends AppCompatActivity {
                     }
                 }
         );
-
-
 
     }
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -142,7 +185,6 @@ public class Home extends AppCompatActivity {
         db = FirebaseDatabase.getInstance();
         ref = db.getReference("SanPham").child("GoiY");
 
-
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -163,7 +205,66 @@ public class Home extends AppCompatActivity {
 
     }
 
+    private void getList_thucan(){
 
+        db = FirebaseDatabase.getInstance();
+        ref = db.getReference("SanPham").child("Thucan");
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    SanPham sanpham = dataSnapshot.getValue(SanPham.class);
+                    listsp.add(sanpham);
+                }
+                adapterSanphan.notifyDataSetChanged();
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(Home.this,"get list false",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+    private void getList_phukien(){
+
+        db = FirebaseDatabase.getInstance();
+        ref = db.getReference("SanPham").child("Phukien");
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    SanPham sanpham = dataSnapshot.getValue(SanPham.class);
+                    listsp.add(sanpham);
+                }
+                adapterSanphan.notifyDataSetChanged();
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(Home.this,"get list false",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+    private void getList_quanao(){
+        ref = FirebaseDatabase.getInstance().getReference();
+        sp = new SanPham("thang","thang dep trai","1234đ","");
+
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    SanPham sanpham = dataSnapshot.getValue(SanPham.class);
+                    listsp.add(sanpham);
+                }
+                adapterSanphan.notifyDataSetChanged();
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(Home.this,"get list false",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
 
 
 

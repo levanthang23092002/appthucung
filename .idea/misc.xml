@@ -28,6 +28,7 @@
         <entry key="..\:/wordSpace/hoc_ki_5/thlttdd/project_app_thu_cung/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/wordSpace/hoc_ki_5/thlttdd/project_app_thu_cung/app/src/main/res/layout/activity_nhap_thong_tin.xml" value="0.2" />
         <entry key="..\:/wordSpace/hoc_ki_5/thlttdd/project_app_thu_cung/app/src/main/res/layout/activity_shopping_cart.xml" value="0.27447916666666666" />
+        <entry key="..\:/wordSpace/hoc_ki_5/thlttdd/project_app_thu_cung/app/src/main/res/layout/activity_thong_tin_ca_nhan.xml" value="0.27447916666666666" />
         <entry key="..\:/wordSpace/hoc_ki_5/thlttdd/project_app_thu_cung/app/src/main/res/layout/diglog_finish.xml" value="0.264" />
         <entry key="..\:/wordSpace/hoc_ki_5/thlttdd/project_app_thu_cung/app/src/main/res/layout/diglog_ntt.xml" value="0.1" />
         <entry key="..\:/wordSpace/hoc_ki_5/thlttdd/project_app_thu_cung/app/src/main/res/layout/diglog_ntt_name.xml" value="0.27447916666666666" />
@@ -38,7 +39,7 @@
         <entry key="..\:/wordSpace/hoc_ki_5/thlttdd/project_app_thu_cung/app/src/main/res/layout/fragment_thong_tin_ca_nhan.xml" value="0.27447916666666666" />
         <entry key="..\:/wordSpace/hoc_ki_5/thlttdd/project_app_thu_cung/app/src/main/res/layout/fragment_trung_tam_tro_giup.xml" value="0.27447916666666666" />
         <entry key="..\:/wordSpace/hoc_ki_5/thlttdd/project_app_thu_cung/app/src/main/res/layout/fragment_vi.xml" value="0.27447916666666666" />
-        <entry key="..\:/wordSpace/hoc_ki_5/thlttdd/project_app_thu_cung/app/src/main/res/layout/listout.xml" value="0.27447916666666666" />
+        <entry key="..\:/wordSpace/hoc_ki_5/thlttdd/project_app_thu_cung/app/src/main/res/layout/listout.xml" value="0.264" />
         <entry key="..\:/wordSpace/hoc_ki_5/thlttdd/project_app_thu_cung/app/src/main/res/layout/nav_header.xml" value="0.27447916666666666" />
         <entry key="..\:/wordSpace/hoc_ki_5/thlttdd/project_app_thu_cung/app/src/main/res/menu/bottom_nav.xml" value="0.27447916666666666" />
         <entry key="..\:/wordSpace/hoc_ki_5/thlttdd/project_app_thu_cung/app/src/main/res/menu/menu1.xml" value="0.27447916666666666" />
@@ -57,7 +58,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.2" />
+        <option name="scale" value="0.264" />
       </ProjectState>
     </option>
   </component>

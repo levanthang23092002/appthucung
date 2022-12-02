@@ -6,7 +6,7 @@
     android:layout_margin="5dp">
 
     <LinearLayout
-        android:layout_height="150dp"
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
@@ -17,10 +17,11 @@
         >
 
        <ImageView
+           android:layout_marginLeft="5dp"
            android:id="@+id/imgsp"
            android:layout_width="100dp"
            android:layout_height="130dp"
-           android:background="@drawable/border_img"/>
+           />
         <LinearLayout
             android:layout_width="300dp"
             android:layout_height="match_parent"
@@ -30,7 +31,7 @@
                 android:id="@+id/tv_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:padding="5dp"
                 android:text="name"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -38,17 +39,19 @@
             <TextView
                 android:id="@+id/tv_mota"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_marginLeft="10dp"
                 android:text="mota" />
 
             <TextView
                 android:id="@+id/tv_price"
-                android:layout_width="278dp"
-                android:layout_height="50dp"
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="-5dp"
                 android:gravity="center_vertical"
                 android:text="gia"
-                android:textSize="19dp"
+                android:layout_marginLeft="180dp"
+                android:textSize="22dp"
                 android:textColor="#FFB000" />
         </LinearLayout>
 
