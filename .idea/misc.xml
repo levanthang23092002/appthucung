@@ -20,7 +20,7 @@
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/activity_thong_tin_ca_nhan.xml" value="0.22037037037037038" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/activity_tro_giup_chi_tiet.xml" value="0.27447916666666666" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/activity_trung_tam_ho_tro.xml" value="0.27447916666666666" />
-        <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/activity_vi_tk.xml" value="0.1" />
+        <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/activity_vi_tk.xml" value="0.14010416666666667" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/diglog_finish.xml" value="0.20092592592592592" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/diglog_ntt.xml" value="0.20092592592592592" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/fragment_danhgia.xml" value="0.20092592592592592" />
@@ -30,7 +30,7 @@
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/fragment_vi.xml" value="0.27447916666666666" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/item_buoc.xml" value="0.27447916666666666" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/item_danhgia.xml" value="0.27447916666666666" />
-        <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/item_vi.xml" value="0.264" />
+        <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/item_vi.xml" value="0.14010416666666667" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/listout.xml" value="0.27025641025641023" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/menu/bottom_nav.xml" value="0.27447916666666666" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/menu/menu1.xml" value="0.27447916666666666" />
@@ -91,7 +91,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.264" />
+        <option name="scale" value="0.14010416666666667" />
       </ProjectState>
     </option>
   </component>

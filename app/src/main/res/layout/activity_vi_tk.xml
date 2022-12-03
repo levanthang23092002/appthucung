@@ -82,11 +82,11 @@
         </LinearLayout>
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="435dp">
+            android:layout_height="450dp">
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="400dp">
                 <TextView
                     android:id="@+id/txt_vi_namestk"
                     android:visibility="invisible"
@@ -155,14 +155,14 @@
                     android:entries="@array/bank_arrays"
                     android:prompt="@string/bank" />
                 <LinearLayout
+                        android:layout_marginTop="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <Button
-                        android:layout_marginLeft="45dp"
+                        android:layout_marginLeft="40dp"
                         android:visibility="invisible"
                         android:id="@+id/btn_vi_them"
-                        android:layout_marginTop="25dp"
                         android:layout_width="250dp"
                         android:layout_height="45dp"
                         android:background="@drawable/boderbutton"
@@ -173,7 +173,6 @@
                     <Button
                         android:visibility="invisible"
                         android:id="@+id/btn_vi_an"
-                        android:layout_marginTop="25dp"
                         android:layout_width="70dp"
                         android:layout_marginLeft="15dp"
                         android:layout_height="45dp"
@@ -189,13 +188,14 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:orientation="vertical">
 
-                <ListView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/lv_vi_tkbank"
-                    android:layout_width="250dp"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="90dp"
+                    android:layout_marginLeft="50dp"
                     tools:listitem="@layout/item_vi" />
             </LinearLayout>
         </RelativeLayout>

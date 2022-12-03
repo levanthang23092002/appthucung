@@ -2,6 +2,9 @@ package com.example.project_app_thu_cung;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -24,8 +27,14 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Vi_Tk extends AppCompatActivity {
     TextView txtnamestk,txtnamemapin,txtnamebank;
@@ -33,8 +42,11 @@ public class Vi_Tk extends AppCompatActivity {
     Spinner txtbank;
     Button btnthem,btnan;
     ImageButton btnadd,btntrove;
-    ListView lv_vi;
-    private DatabaseReference mDatabase;
+    RecyclerView lv_vi;
+    AdapterVi mainAdapter;
+    List<vi_them> viList;
+    private FirebaseDatabase db;
+    private DatabaseReference ref;
 
 
     @Override
@@ -42,6 +54,9 @@ public class Vi_Tk extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vi_tk);
         anhsa();
+        Ui();
+
+
         btnan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,7 +80,7 @@ public class Vi_Tk extends AppCompatActivity {
                         oppendialog_tb(Gravity.CENTER,"Bạn cần nhập đầy đủ thông tin");
                     }else{
                         vi_them tk = new vi_them(stk,bank,mapin);
-                        mDatabase.child("vi").child(apunti.sdt).push().setValue(tk);
+                        ref.child("vi").child(apunti.sdt).push().setValue(tk);
                         hienthi();
 
                     }
@@ -108,7 +123,7 @@ public class Vi_Tk extends AppCompatActivity {
 
     }
     private void anhsa(){
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+        ref = FirebaseDatabase.getInstance().getReference();
         txtnamestk =findViewById(R.id.txt_vi_namestk);
         txtnamemapin = findViewById(R.id.txt_vi_namemaping);
         txtnamebank= findViewById(R.id.txt_vi_namebank);
@@ -120,6 +135,34 @@ public class Vi_Tk extends AppCompatActivity {
         btnadd =findViewById(R.id.btn_vi_add);
         lv_vi =findViewById(R.id.lv_vi_tkbank);
         btntrove= findViewById(R.id.btn_vi_trove);
+    }
+    private void Ui(){
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        lv_vi.setLayoutManager(linearLayoutManager);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this,DividerItemDecoration.VERTICAL);
+        lv_vi.addItemDecoration(dividerItemDecoration);
+
+        viList= new ArrayList<>();
+        mainAdapter = new AdapterVi(viList);
+        lv_vi.setAdapter(mainAdapter);
+
+        db = FirebaseDatabase.getInstance();
+        ref = db.getReference("vi").child(apunti.sdt) ;
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    vi_them vi = dataSnapshot.getValue(vi_them.class);
+                    viList.add(vi);
+                }
+                mainAdapter.notifyDataSetChanged();
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(Vi_Tk.this,"get list false",Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
     private void oppendialog_tb(int gravity,String x){
         final Dialog dialog =new Dialog(this);
@@ -175,6 +218,7 @@ public class Vi_Tk extends AppCompatActivity {
         txtmapin.setVisibility(View.VISIBLE);
         txtbank.setVisibility(View.VISIBLE);
         btnthem.setVisibility(View.VISIBLE);
+        btnan.setVisibility(View.VISIBLE);
         lv_vi.setVisibility(View.INVISIBLE);
     }
     private void hienthi(){
@@ -185,6 +229,7 @@ public class Vi_Tk extends AppCompatActivity {
         txtmapin.setVisibility(View.INVISIBLE);
         txtbank.setVisibility(View.INVISIBLE);
         btnthem.setVisibility(View.INVISIBLE);
+        btnan.setVisibility(View.INVISIBLE);
         lv_vi.setVisibility(View.VISIBLE);
     }
 
