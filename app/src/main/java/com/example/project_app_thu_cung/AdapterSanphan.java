@@ -46,7 +46,7 @@ public class AdapterSanphan extends RecyclerView.Adapter<AdapterSanphan.SPViewHo
         }
         holder.tvname.setText(SP.getTensp());
         holder.tvmota.setText( SP.getMota());
-        holder.tvprice.setText( SP.getGia()+"VND");
+        holder.tvprice.setText( SP.getGia());
         Glide.with(holder.hinh.getContext())
                 .load(SP.getHinh())
                 .placeholder(R.mipmap.ic_launcher) // ảnh mặt định

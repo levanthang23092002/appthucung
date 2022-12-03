@@ -135,8 +135,8 @@
             android:background="@color/white"
             android:itemBackground="#fff"
             app:itemBackground="@color/white"
-            app:itemIconTint="#000"
-            app:itemTextColor="@color/black"
+            app:itemIconTint="@color/item_navbar"
+            app:itemTextColor="@color/item_navbar"
             app:menu="@menu/bottom_nav"
             />
 

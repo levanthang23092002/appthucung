@@ -253,13 +253,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="(210+)" />
+
     <Button
         android:id="@+id/btn_detail_muahang"
         android:layout_width="130dp"
         android:layout_height="60dp"
         android:layout_below="@+id/txt_detail_sodanhgia"
-        android:layout_marginTop="30dp"
         android:layout_marginLeft="250dp"
+        android:layout_marginTop="30dp"
         android:text="Mua hàng" />
     <Button
         android:id="@+id/btn_detail_giohang"

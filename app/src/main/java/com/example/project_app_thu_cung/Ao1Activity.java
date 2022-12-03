@@ -17,30 +17,29 @@ public class Ao1Activity extends AppCompatActivity {
     ImageButton btn_trove;
     RadioButton radioButton;
     RadioGroup radioGroup;
-    Button btncong,btntru;
+    Button btncong,btntru,btnmuahang;
     TextView soluong;
-    ImageView img;
+    ImageView img_dg;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chitietao1);
-        btn_trove=findViewById(R.id.btn_detail_trove);
-        radioGroup= findViewById(R.id.radio_btn);
-        btncong=findViewById(R.id.btn_detail_cong);
-        btntru=findViewById(R.id.btn_detail_tru);
-        soluong=findViewById(R.id.txt_detail_soluong);
-        img=findViewById(R.id.img_detail_danhgia);
+        anhsa();
 
-
-
-        img.setOnClickListener(new View.OnClickListener() {
+        btnmuahang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(Ao1Activity.this,Mua_hang.class);
+                startActivity(intent);
+            }
+        });
+        img_dg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent5 =new Intent(Ao1Activity.this,DanhGiaActivity.class);
                 startActivity(intent5);
             }
         });
-
         btntru.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,9 +64,6 @@ public class Ao1Activity extends AppCompatActivity {
                     soluong.setText(sl);
             }
         });
-
-
-
         btn_trove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,5 +75,14 @@ public class Ao1Activity extends AppCompatActivity {
     public void checkButton(View v){
         int radioId =radioGroup.getCheckedRadioButtonId();
         radioButton =findViewById(radioId);
+    }
+    private void  anhsa(){
+        btn_trove=findViewById(R.id.btn_detail_trove);
+        radioGroup= findViewById(R.id.radio_btn);
+        btncong=findViewById(R.id.btn_detail_cong);
+        btntru=findViewById(R.id.btn_detail_tru);
+        soluong=findViewById(R.id.txt_detail_soluong);
+        img_dg=findViewById(R.id.img_detail_danhgia);
+        btnmuahang=findViewById(R.id.btn_detail_muahang);
     }
 }

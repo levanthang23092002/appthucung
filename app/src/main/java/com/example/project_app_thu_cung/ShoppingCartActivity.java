@@ -8,12 +8,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -59,6 +62,32 @@ public class ShoppingCartActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent =new Intent(ShoppingCartActivity.this,Mua_hang.class);
                 startActivity(intent);
+            }
+        });
+        BottomNavigationView bt  = findViewById(R.id.bottom_nav);
+        bt.setSelectedItemId(R.id.mes);
+        bt.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()){
+                    case R.id.mes:
+                        Intent hom = new Intent(ShoppingCartActivity.this,Home.class);
+                        startActivity(hom);
+                        break;
+                    case R.id.account:
+                        Intent acc = new Intent(ShoppingCartActivity.this,Thong_tin_ca_nhan.class);
+                        startActivity(acc);
+                        break;
+                    case R.id.cart:
+                        break;
+                    case R.id.note:
+                        Intent thongbao = new Intent(ShoppingCartActivity.this,Vi_Tk.class);
+                        startActivity(thongbao);
+                        break;
+                }
+
+                return true;
             }
         });
     }

@@ -12,7 +12,7 @@
         android:layout_weight="0.20">
 
         <ImageView
-            android:id="@+id/id_comback_login"
+            android:id="@+id/img_muahang_comback"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"

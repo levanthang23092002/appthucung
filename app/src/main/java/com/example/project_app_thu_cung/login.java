@@ -68,20 +68,8 @@ public class login extends AppCompatActivity {
     private void dangnhap(){
         if (txtpass.getText().toString().equals("")||txtsdt.getText().toString().equals("")){
             oppendialog_tb(Gravity.CENTER,"Vui Lòng Nhập Đầy Đủ Số Tài Khoản Và Pass");
-        }else {
-            String sdt1 = txtpass.getText().toString();
-            String matkhau = txtsdt.getText().toString();
-            if (sdt1.equals("0966948914") && matkhau.equals("123")){
-                apunti.sdt=sdt1;
-                Toast.makeText(login.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(login.this, Home.class);
-                intent.putExtra("user", txtsdt.getText().toString());
-                startActivity(intent);
-                txtpass.setText("");
-                txtsdt.setText("");
-                status = true;
-
-        } else{
+        }else{
+                apunti.sdt=txtsdt.getText().toString();
                 Cursor data1 = sqlite.getdata("SELECT * From User");
                 while (data1.moveToNext() == true) {
                     int sdt = data1.getInt(0);
@@ -103,7 +91,7 @@ public class login extends AppCompatActivity {
                     Toast.makeText(login.this, "Sai thông tin tài khoản hoặc mật khẩu", Toast.LENGTH_SHORT).show();
                 }
             }
-        }
+
 
     }
     private void anhxa(){

@@ -6,11 +6,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,11 +27,11 @@ public class Thong_tin_ca_nhan extends AppCompatActivity implements ValueEventLi
     private FirebaseDatabase db =FirebaseDatabase.getInstance();
     private DatabaseReference ref= db.getReference();
 
-    private DatabaseReference diachi=ref.child("user").child("0775543228").child("diachi");
-    private DatabaseReference gioitinh =ref.child("user").child("0775543228").child("gioitinh");
-    private DatabaseReference hoten =ref.child("user").child("0775543228").child("hoten");
-    private DatabaseReference ngaysinh=ref.child("user").child("0775543228").child("ngaysinh");
-    private DatabaseReference sdt =ref.child("user").child("0775543228").child("sdt");
+    private DatabaseReference diachi=ref.child("user").child(apunti.sdt).child("diachi");
+    private DatabaseReference gioitinh =ref.child("user").child(apunti.sdt).child("gioitinh");
+    private DatabaseReference hoten =ref.child("user").child(apunti.sdt).child("hoten");
+    private DatabaseReference ngaysinh=ref.child("user").child(apunti.sdt).child("ngaysinh");
+    private DatabaseReference sdt =ref.child("user").child(apunti.sdt).child("sdt");
 
 
 
@@ -44,6 +47,34 @@ public class Thong_tin_ca_nhan extends AppCompatActivity implements ValueEventLi
         txtdiachi =(TextView) findViewById(R.id.txtdiachi);
         ref = FirebaseDatabase.getInstance().getReference();
        // Toast.makeText(Thong_tin_ca_nhan.this,apunti.sdt,Toast.LENGTH_SHORT).show();
+        BottomNavigationView bt  = findViewById(R.id.bottom_nav);
+        bt.setSelectedItemId(R.id.mes);
+        bt.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()){
+                    case R.id.mes:
+                        Intent hom = new Intent(Thong_tin_ca_nhan.this,Home.class);
+                        startActivity(hom);
+                        break;
+                    case R.id.account:
+
+                        break;
+                    case R.id.cart:
+                        Intent giohang = new Intent(Thong_tin_ca_nhan.this,ShoppingCartActivity.class);
+                        startActivity(giohang);
+                        break;
+                    case R.id.note:
+                        Intent thongbao = new Intent(Thong_tin_ca_nhan.this,Vi_Tk.class);
+                        startActivity(thongbao);
+                        break;
+                }
+
+                return true;
+            }
+        });
+
         btn_ve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,13 +109,11 @@ public class Thong_tin_ca_nhan extends AppCompatActivity implements ValueEventLi
             }
         }
     }
-
     @Override
     public void onCancelled(@NonNull DatabaseError error) {
 
 
     }
-
     @Override
     protected void onStart() {
         super.onStart();

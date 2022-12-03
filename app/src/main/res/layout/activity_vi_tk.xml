@@ -18,7 +18,7 @@
             android:orientation="horizontal"
             android:layout_gravity="center">
             <ImageButton
-                android:id="@+id/logo"
+                android:id="@+id/btn_vi_trove"
                 android:layout_margin="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -80,89 +80,139 @@
                 android:textColor="#2B2B2B"
                 android:text=" Thêm Tài khoản "/>
         </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/txt_vi_namestk"
-                android:visibility="invisible"
-                android:layout_marginTop="15dp"
+            android:layout_height="435dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/txt_vi_namestk"
+                    android:visibility="invisible"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="2dp"
+                    android:text="Số tài khoản"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:textColor="#434343"/>
+                <EditText
+                    android:visibility="invisible"
+                    android:layout_marginTop="3dp"
+                    android:id="@+id/txt_vi_stkhoan"
+                    android:layout_gravity="center"
+                    android:layout_width="350dp"
+                    android:layout_height="40dp"
+                    android:textSize="18dp"
+                    android:inputType="number"
+                    android:textColor="#000000"
+                    android:background="@drawable/boder"
+                    android:hint="Số tài khoản"/>
+                <TextView
+                    android:id="@+id/txt_vi_namemaping"
+                    android:visibility="invisible"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="2dp"
+                    android:text="Mã pin"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:textColor="#434343"/>
+                <EditText
+                    android:visibility="invisible"
+                    android:layout_marginTop="3dp"
+                    android:id="@+id/txt_vi_maping"
+                    android:layout_gravity="center"
+                    android:layout_width="350dp"
+                    android:layout_height="40dp"
+                    android:textSize="18dp"
+                    android:inputType="number"
+                    android:textColor="#000000"
+                    android:background="@drawable/boder"
+                    android:hint="Mã pin"/>
+                <TextView
+                    android:id="@+id/txt_vi_namebank"
+                    android:visibility="invisible"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="2dp"
+                    android:text="Mã pin"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:textColor="#434343"/>
+                <Spinner
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/cbb_vi_bank"
+                    android:layout_gravity="center_horizontal|center"
+                    android:layout_width="350dp"
+                    android:layout_height="40dp"
+                    android:visibility="invisible"
+                    android:background="@drawable/boder"
+                    android:entries="@array/bank_arrays"
+                    android:prompt="@string/bank" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:layout_marginLeft="45dp"
+                        android:visibility="invisible"
+                        android:id="@+id/btn_vi_them"
+                        android:layout_marginTop="25dp"
+                        android:layout_width="250dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/boderbutton"
+                        android:layout_gravity="center"
+                        android:text="Thêm"
+                        android:textStyle="bold"
+                        android:textSize="19dp"/>
+                    <Button
+                        android:visibility="invisible"
+                        android:id="@+id/btn_vi_an"
+                        android:layout_marginTop="25dp"
+                        android:layout_width="70dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/boderbutton"
+                        android:layout_gravity="center"
+                        android:text="Ẩn"
+                        android:textStyle="bold"
+                        android:textSize="19dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="2dp"
-                android:text="Số tài khoản"
-                android:textSize="20dp"
-                android:layout_marginLeft="30dp"
-                android:textColor="#434343"/>
-            <EditText
-                android:visibility="invisible"
-                android:layout_marginTop="3dp"
-                android:id="@+id/txt_vi_stkhoan"
-                android:layout_gravity="center"
-                android:layout_width="350dp"
-                android:layout_height="40dp"
-                android:textSize="18dp"
-                android:inputType="number"
-                android:textColor="#000000"
-                android:background="@drawable/boder"
-                android:hint="Số tài khoản"/>
-            <TextView
-                android:id="@+id/txt_vi_namemaping"
-                android:visibility="invisible"
-                android:layout_marginTop="15dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="2dp"
-                android:text="Mã pin"
-                android:textSize="20dp"
-                android:layout_marginLeft="30dp"
-                android:textColor="#434343"/>
-            <EditText
-                android:visibility="invisible"
-                android:layout_marginTop="3dp"
-                android:id="@+id/txt_vi_maping"
-                android:layout_gravity="center"
-                android:layout_width="350dp"
-                android:layout_height="40dp"
-                android:textSize="18dp"
-                android:inputType="number"
-                android:textColor="#000000"
-                android:background="@drawable/boder"
-                android:hint="Mã pin"/>
-            <TextView
-                android:id="@+id/txt_vi_namebank"
-                android:visibility="invisible"
-                android:layout_marginTop="15dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="2dp"
-                android:text="Mã pin"
-                android:textSize="20dp"
-                android:layout_marginLeft="30dp"
-                android:textColor="#434343"/>
-            <Spinner
-                android:layout_marginTop="10dp"
-                android:id="@+id/cbb_vi_bank"
-                android:layout_gravity="center_horizontal|center"
-                android:layout_width="350dp"
-                android:layout_height="40dp"
-                android:visibility="invisible"
-                android:background="@drawable/boder"
-                android:entries="@array/bank_arrays"
-                android:prompt="@string/bank" />
-            <Button
-                android:visibility="invisible"
-                android:id="@+id/btn_vi_them"
-                android:layout_marginTop="25dp"
-                android:layout_width="250dp"
-                android:layout_height="45dp"
-                android:background="@drawable/boderbutton"
-                android:layout_gravity="center"
-                android:text="Thêm"
-                android:textStyle="bold"
-                android:textSize="19dp"/>
-        </LinearLayout>
+                android:orientation="vertical">
+
+                <ListView
+                    android:id="@+id/lv_vi_tkbank"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="90dp"
+                    tools:listitem="@layout/item_vi" />
+            </LinearLayout>
+        </RelativeLayout>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_nav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:background="@color/white"
+            android:itemBackground="#fff"
+            app:itemBackground="@color/white"
+            app:itemIconTint="@color/item_navbar"
+            app:itemTextColor="@color/item_navbar"
+            app:menu="@menu/bottom_nav"
+            />
+
 
 
     </LinearLayout>

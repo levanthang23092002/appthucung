@@ -14,8 +14,8 @@
         />
     <item
         android:id="@+id/note"
-        android:icon="@drawable/ic_baseline_notifications_24"
-        android:title="@string/action_note"
+        android:title="Ví"
+        android:icon="@drawable/ic_baseline_wallet_24"
         />
 
     <item

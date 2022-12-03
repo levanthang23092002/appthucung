@@ -77,10 +77,6 @@ public class Home extends AppCompatActivity implements Onclickitem {
             }
         });
 
-
-
-
-
         arrayList = new ArrayList<>();
         mDrawerLayout = findViewById(R.id.drawer_layout);
 
