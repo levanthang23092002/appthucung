@@ -20,6 +20,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,7 +32,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Home extends AppCompatActivity {
+public class Home extends AppCompatActivity implements Onclickitem {
     private FirebaseDatabase db;
     private DatabaseReference ref;
     ArrayList<SanPham> arrayList;
@@ -49,72 +51,45 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         initUI();
         getListLoaiSpFromRealtimeFireBase();
-        btn_gy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                initUI();
-                getListLoaiSpFromRealtimeFireBase();
-            }
-        });
-        btn_ta.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                initUI();
-                getList_thucan();
-
-            }
-        });
-        btn_pk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getList_phukien();
-            }
-        });
-        btn_qa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getList_quanao();
-            }
-        });
-
-
-//        ref = FirebaseDatabase.getInstance().getReference();
-//        sp = new SanPham("thang","thang dep trai","1234đ","https://4cepet.com/cdn1/images/202011/thumb_article/huong-dan-cach-may-ao-cho-meo-cuc-ky-don-gian-thumb-1605045181.jpg");
-//
-//        ref.child("SanPham").child("GoiY").push().setValue(sp);
-
-
-
+        arrayList = new ArrayList<>();
         mDrawerLayout = findViewById(R.id.drawer_layout);
+
+        BottomNavigationView bt  = findViewById(R.id.bottom_nav);
+        bt.setSelectedItemId(R.id.mes);
+        bt.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()){
+                    case R.id.mes:
+                        break;
+                    case R.id.account:
+                        Intent acc = new Intent(Home.this,Thong_tin_ca_nhan.class);
+                        startActivity(acc);
+                        break;
+                    case R.id.cart:
+                        Intent giohang = new Intent(Home.this,ShoppingCartActivity.class);
+                        startActivity(giohang);
+                        break;
+                    case R.id.note:
+                        Intent thongbao = new Intent(Home.this,DanhGiaActivity.class);
+                        startActivity(thongbao);
+                        break;
+                }
+
+                return true;
+            }
+        });
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
-
-                        switch (menuItem.getItemId())
-                        {
-                            case R.id.action_hom:
-                                Intent intent = new Intent(Home.this, Home.class);
-                                startActivity(intent);
-
-                                break;
-                            case R.id.action_giohang:
-                                Intent intent1 = new Intent(Home.this, ShoppingCartActivity.class);
-                                startActivity(intent1);
-                                break;
-                            case R.id.action_thongbao:
-                                Intent intent2 = new Intent(Home.this, Thong_tin_ca_nhan.class);
-                                startActivity(intent2);
-                                break;
-//                            case R.id.action_canhan:
-//                                Intent intent3 = new Intent(Home.this, .class);
-//                                startActivity(intent3);
-//                                break;
-
+                        switch (menuItem.getItemId()){
+                            case R.id.mes:
+                                Toast.makeText(Home.this,"Thành công",Toast.LENGTH_SHORT).show();
                         }
-
                         return true;
                     }
                 });
@@ -145,6 +120,8 @@ public class Home extends AppCompatActivity {
                     }
                 }
         );
+
+
 
     }
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -178,13 +155,15 @@ public class Home extends AppCompatActivity {
         recyc.addItemDecoration(dividerItemDecoration);
 
         listsp = new ArrayList<>();
-        adapterSanphan= new AdapterSanphan(listsp);
+        adapterSanphan= new AdapterSanphan(listsp,this);
         recyc.setAdapter(adapterSanphan);
+
     }
     private void getListLoaiSpFromRealtimeFireBase(){
         db = FirebaseDatabase.getInstance();
         ref = db.getReference("SanPham").child("GoiY");
 
+
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -204,68 +183,10 @@ public class Home extends AppCompatActivity {
         });
 
     }
-
-    private void getList_thucan(){
-
-        db = FirebaseDatabase.getInstance();
-        ref = db.getReference("SanPham").child("Thucan");
-        ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    SanPham sanpham = dataSnapshot.getValue(SanPham.class);
-                    listsp.add(sanpham);
-                }
-                adapterSanphan.notifyDataSetChanged();
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(Home.this,"get list false",Toast.LENGTH_SHORT).show();
-            }
-        });
-
+    @Override
+    public void onItemClick(Class<chi_tiet_san_pham> note) {
+        Intent intent = new Intent();
+        intent.setClass(Home.this, Ao1Activity.class);
+        startActivity(intent);
     }
-    private void getList_phukien(){
-
-        db = FirebaseDatabase.getInstance();
-        ref = db.getReference("SanPham").child("Phukien");
-        ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    SanPham sanpham = dataSnapshot.getValue(SanPham.class);
-                    listsp.add(sanpham);
-                }
-                adapterSanphan.notifyDataSetChanged();
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(Home.this,"get list false",Toast.LENGTH_SHORT).show();
-            }
-        });
-
-    }
-    private void getList_quanao(){
-        ref = FirebaseDatabase.getInstance().getReference();
-        sp = new SanPham("thang","thang dep trai","1234đ","");
-
-        ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    SanPham sanpham = dataSnapshot.getValue(SanPham.class);
-                    listsp.add(sanpham);
-                }
-                adapterSanphan.notifyDataSetChanged();
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(Home.this,"get list false",Toast.LENGTH_SHORT).show();
-            }
-        });
-
-    }
-
-
-
 }

@@ -1,5 +1,6 @@
 package com.example.project_app_thu_cung;
 
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,12 +16,19 @@ import java.util.List;
 
 public class AdapterSanphan extends RecyclerView.Adapter<AdapterSanphan.SPViewHoler> {
     private List<SanPham> listlsp;
+    private Onclickitem onclickitem;
+
 
     Home mainActivity = new Home();
 
+    public AdapterSanphan(List<SanPham> listlsp, Onclickitem onclickitem) {
+        this.listlsp = listlsp;
+        this.onclickitem = onclickitem;
+        notifyDataSetChanged();
+    }
+
     public AdapterSanphan(List<SanPham> listlsp) {
         this.listlsp = listlsp;
-        notifyDataSetChanged();
     }
 
     @NonNull
@@ -57,11 +65,18 @@ public class AdapterSanphan extends RecyclerView.Adapter<AdapterSanphan.SPViewHo
 
     public class SPViewHoler  extends RecyclerView.ViewHolder {
         private TextView tvname;
+        private ContactsContract.CommonDataKinds.Note note;
         private TextView tvmota;
         private TextView tvprice;
         private ImageView hinh;
         public SPViewHoler(@NonNull View itemView) {
             super(itemView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onclickitem.onItemClick(chi_tiet_san_pham.class);
+                }
+            });
             tvname = itemView.findViewById(R.id.tv_name);
             tvmota = itemView.findViewById(R.id.tv_mota);
             tvprice = itemView.findViewById(R.id.tv_price);
@@ -69,5 +84,4 @@ public class AdapterSanphan extends RecyclerView.Adapter<AdapterSanphan.SPViewHo
         }
     }
 }
-
 

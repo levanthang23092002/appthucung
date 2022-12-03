@@ -19,6 +19,9 @@
         android:theme="@style/Theme.Project_app_thu_cung"
         tools:targetApi="31">
         <activity
+            android:name=".login"
+            android:exported="false" />
+        <activity
             android:name=".Thong_tin_ca_nhan"
             android:exported="false" />
         <activity
@@ -40,7 +43,7 @@
             android:name=".login"
             android:exported="false" />
         <activity
-            android:name=".loading"
+            android:name=".detail_sp"
             android:exported="true"
             android:theme="@style/splash">
             <intent-filter>
