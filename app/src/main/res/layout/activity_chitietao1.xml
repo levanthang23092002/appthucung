@@ -122,32 +122,32 @@
         android:textSize="18sp"
         android:textStyle="bold" />
     <RadioGroup
+        android:orientation="horizontal"
         android:layout_below="@+id/txt_detail_sizeXL"
         android:id="@+id/radio_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+
         <RadioButton
 
             android:id="@+id/radio_1"
             android:layout_width="60dp"
             android:layout_height="40dp"
-            android:layout_below="@+id/textView10"
+            android:layout_below="@+id/radio_1"
             android:layout_marginLeft="60dp"
             android:background="@drawable/bogoc"
+            android:onClick="checkButton"
             android:text="S" />
         <RadioButton
             android:layout_marginLeft="30dp"
-
+            android:onClick="checkButton"
             android:id="@+id/radio_2"
             android:layout_width="60dp"
             android:layout_height="40dp"
             android:background="@drawable/bogoc"
             android:text="M" />
         <RadioButton
+            android:onClick="checkButton"
             android:layout_marginLeft="30dp"
             android:layout_below="@+id/textView10"
             android:id="@+id/radio_3"
@@ -157,6 +157,7 @@
             android:background="@drawable/bogoc"
             android:text="L" />
         <RadioButton
+            android:onClick="checkButton"
             android:layout_marginLeft="30dp"
             android:layout_below="@+id/radio_4"
             android:id="@+id/button7"
@@ -164,7 +165,7 @@
             android:layout_height="40dp"
             android:background="@drawable/bogoc"
             android:text="XL" />
-        </LinearLayout>
+
     </RadioGroup>
 
     <TextView
@@ -181,10 +182,12 @@
 
     <Button
         android:id="@+id/btn_detail_tru"
-        android:layout_width="40dp"
+        android:layout_width="50dp"
         android:layout_height="40dp"
         android:layout_below="@+id/radio_btn"
         android:layout_marginLeft="160dp"
+        android:textSize="18dp"
+        android:gravity="center"
         android:text="-" />
 
     <TextView
@@ -192,16 +195,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/radio_btn"
-        android:layout_marginLeft="210dp"
-        android:layout_marginTop="10dp"
-        android:text="1" />
+        android:layout_marginLeft="240dp"
+        android:layout_marginTop="5dp"
+        android:text="1"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
     <Button
         android:id="@+id/btn_detail_cong"
-        android:layout_width="40dp"
+        android:layout_width="50dp"
         android:layout_height="40dp"
         android:layout_below="@+id/radio_btn"
-        android:layout_marginLeft="230dp"
-        android:text="+" />
+        android:layout_marginLeft="280dp"
+        android:gravity="center"
+        android:text="+"
+        android:textSize="18dp" />
+
     <TextView
 
         android:id="@+id/textView13"
@@ -227,13 +237,13 @@
         android:textStyle="bold" />
 
     <ImageView
-
-        android:layout_marginLeft="210dp"
-        android:layout_below="@+id/textView11"
         android:id="@+id/img_detail_danhgia"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/danhgia" />
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/textView11"
+        android:layout_marginLeft="190dp"
+        android:layout_marginTop="7dp"
+        app:srcCompat="@drawable/ic_star" />
 
     <TextView
         android:layout_marginLeft="260dp"

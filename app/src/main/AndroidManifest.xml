@@ -43,7 +43,7 @@
             android:name=".ShoppingCartActivity"
             android:exported="false" />
         <activity
-            android:name=".loading"
+            android:name=".Home"
             android:exported="true"
             android:theme="@style/splash">
             <intent-filter>
@@ -53,7 +53,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Home"
+            android:name=".loading"
             android:exported="false" />
         <activity
             android:name=".MaOTP"
