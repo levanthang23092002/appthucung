@@ -37,13 +37,13 @@
             android:name=".DanhGiaActivity"
             android:exported="false" />
         <activity
+            android:name=".detail_sp"
+            android:exported="false" />
+        <activity
             android:name=".ShoppingCartActivity"
             android:exported="false" />
         <activity
-            android:name=".login"
-            android:exported="false" />
-        <activity
-            android:name=".detail_sp"
+            android:name=".loading"
             android:exported="true"
             android:theme="@style/splash">
             <intent-filter>

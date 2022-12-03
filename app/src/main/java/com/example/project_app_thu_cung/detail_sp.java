@@ -30,8 +30,8 @@ public class detail_sp extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                sanpham = new detailSP("a","23k","tensp","mô ta","size s","size m","size l","size xl","số sao");
-                mDatabase.child("detailSP").child(ten).setValue(sanpham);
+                sanpham = new detailSP("a","23k","tensp","mô ta","size s","size m","size l","size xl","số sao",txtnv.getText().toString());
+                mDatabase.child("SanPham").child("Thucan").child(txtnv.getText().toString()).setValue(sanpham);
             }
         });
     }

@@ -1,9 +1,9 @@
 package com.example.project_app_thu_cung;
 
 public class detailSP {
-    public String hinh,gia,tensp,mota,sizes,sizem,sizel,sizexl,sosao;
+    public String hinh, gia, tensp, mota, sizes, sizem, sizel, sizexl, sosao, id;
 
-    public detailSP(String hinh, String gia, String tensp, String mota, String sizes, String sizem, String sizel, String sizexl, String sosao) {
+    public detailSP(String hinh, String gia, String tensp, String mota, String sizes, String sizem, String sizel, String sizexl, String sosao, String id) {
         this.hinh = hinh;
         this.gia = gia;
         this.tensp = tensp;
@@ -13,6 +13,7 @@ public class detailSP {
         this.sizel = sizel;
         this.sizexl = sizexl;
         this.sosao = sosao;
+        this.id = id;
     }
 
     public detailSP() {
@@ -88,5 +89,13 @@ public class detailSP {
 
     public void setSosao(String sosao) {
         this.sosao = sosao;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

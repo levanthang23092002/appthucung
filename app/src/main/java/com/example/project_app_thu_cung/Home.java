@@ -50,7 +50,37 @@ public class Home extends AppCompatActivity implements Onclickitem {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         initUI();
-        getListLoaiSpFromRealtimeFireBase();
+        getListGioY();
+
+        btn_gy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getListGioY();
+            }
+        });
+        btn_qa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getListQuanAo();
+            }
+        });
+        btn_pk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getListPhukien();
+            }
+        });
+        btn_ta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getListThucAn();
+            }
+        });
+
+
+
+
+
         arrayList = new ArrayList<>();
         mDrawerLayout = findViewById(R.id.drawer_layout);
 
@@ -121,8 +151,6 @@ public class Home extends AppCompatActivity implements Onclickitem {
                 }
         );
 
-
-
     }
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -159,11 +187,80 @@ public class Home extends AppCompatActivity implements Onclickitem {
         recyc.setAdapter(adapterSanphan);
 
     }
-    private void getListLoaiSpFromRealtimeFireBase(){
+    private void getListGioY(){
+        listsp.clear();
         db = FirebaseDatabase.getInstance();
         ref = db.getReference("SanPham").child("GoiY");
 
 
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    SanPham sanpham = dataSnapshot.getValue(SanPham.class);
+                    listsp.add(sanpham);
+
+                }
+                adapterSanphan.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(Home.this,"get list false",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+    private void getListThucAn(){
+        listsp.clear();
+        db = FirebaseDatabase.getInstance();
+        ref = db.getReference("SanPham").child("Thucan");
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    SanPham sanpham = dataSnapshot.getValue(SanPham.class);
+                    listsp.add(sanpham);
+
+                }
+                adapterSanphan.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(Home.this,"get list false",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+    private void getListPhukien(){
+        listsp.clear();
+        db = FirebaseDatabase.getInstance();
+        ref = db.getReference("SanPham").child("Phukien");
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    SanPham sanpham = dataSnapshot.getValue(SanPham.class);
+                    listsp.add(sanpham);
+
+                }
+                adapterSanphan.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(Home.this,"get list false",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+    private void getListQuanAo(){
+        listsp.clear();
+        db = FirebaseDatabase.getInstance();
+        ref = db.getReference("SanPham").child("Quanao");
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
