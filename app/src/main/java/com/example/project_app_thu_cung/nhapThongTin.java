@@ -38,7 +38,7 @@ public class nhapThongTin extends AppCompatActivity {
         //sqlite.QueryData("Drop Table User");
         // tạo bảng  user(sdt,pass)
         sqlite.QueryData("CREATE TABLE IF NOT EXISTS User(sdt INTEGER PRIMARY KEY ,pass VARCHAR(200))");
-        sqlite.QueryData("delete from User");
+        //sqlite.QueryData("delete from User");
         anhxa();
         mDatabase = FirebaseDatabase.getInstance().getReference();
         btnxacnhan.setOnClickListener(new View.OnClickListener() {
@@ -54,12 +54,14 @@ public class nhapThongTin extends AppCompatActivity {
                     String sql ="INSERT INTO User VALUES("+apunti.sdt+",'"+apunti.matkhau+"')";
                     sqlite.QueryData(sql);
                     taikhoan tk = new taikhoan(apunti.sdt,apunti.matkhau,apunti.hoten,apunti.gioitinh,apunti.ngaysinh,apunti.diachi);
-                    mDatabase.child("user").push().setValue(tk);
+                    mDatabase.child("user").child(apunti.sdt).setValue(tk);
                     Cursor data1 = sqlite.getdata("SELECT * From User");
                     while(data1.moveToNext()== true){
                         int sdt = data1.getInt(0);
                         String pass =data1.getString(1);
                         Toast.makeText(nhapThongTin.this,pass, Toast.LENGTH_SHORT).show();
+                        openlogin();
+
                     }
 
                     }

@@ -44,15 +44,16 @@ public class AdapterSanphan extends RecyclerView.Adapter<AdapterSanphan.SPViewHo
         if(SP == null){
             return;
         }
-        holder.tvname.setText(SP.getName());
+        holder.tvname.setText(SP.getTensp());
         holder.tvmota.setText( SP.getMota());
-        holder.tvprice.setText( SP.getPrice());
+        holder.tvprice.setText( SP.getGia()+"VND");
         Glide.with(holder.hinh.getContext())
                 .load(SP.getHinh())
                 .placeholder(R.mipmap.ic_launcher) // ảnh mặt định
                 .circleCrop()
                 .error(R.mipmap.ic_launcher) // ảnh khi lỗi
                 .into(holder.hinh);
+        holder.tvid.setText(SP.getId());
     }
 
     @Override
@@ -68,6 +69,7 @@ public class AdapterSanphan extends RecyclerView.Adapter<AdapterSanphan.SPViewHo
         private ContactsContract.CommonDataKinds.Note note;
         private TextView tvmota;
         private TextView tvprice;
+        private TextView tvid;
         private ImageView hinh;
         public SPViewHoler(@NonNull View itemView) {
             super(itemView);
@@ -81,6 +83,7 @@ public class AdapterSanphan extends RecyclerView.Adapter<AdapterSanphan.SPViewHo
             tvmota = itemView.findViewById(R.id.tv_mota);
             tvprice = itemView.findViewById(R.id.tv_price);
             hinh = itemView.findViewById(R.id.imgsp);
+            tvid=itemView.findViewById(R.id.txt_id);
         }
     }
 }

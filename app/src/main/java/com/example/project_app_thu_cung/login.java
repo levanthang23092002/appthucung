@@ -72,6 +72,7 @@ public class login extends AppCompatActivity {
             String sdt1 = txtpass.getText().toString();
             String matkhau = txtsdt.getText().toString();
             if (sdt1.equals("0966948914") && matkhau.equals("123")){
+                apunti.sdt=sdt1;
                 Toast.makeText(login.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(login.this, Home.class);
                 intent.putExtra("user", txtsdt.getText().toString());

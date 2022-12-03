@@ -42,17 +42,31 @@
                 android:layout_height="60dp"
                 android:layout_marginLeft="10dp"
                 android:text="mota" />
+            <LinearLayout
 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/txt_id"
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="-5dp"
+                android:gravity="center_vertical"
+                android:text="gia"
+                android:textColor="#FFB000"
+                android:textSize="22dp" />
             <TextView
                 android:id="@+id/tv_price"
                 android:layout_width="120dp"
                 android:layout_height="30dp"
+                android:layout_marginLeft="60dp"
                 android:layout_marginTop="-5dp"
                 android:gravity="center_vertical"
                 android:text="gia"
-                android:layout_marginLeft="180dp"
-                android:textSize="22dp"
-                android:textColor="#FFB000" />
+                android:textColor="#FFB000"
+                android:textSize="22dp" />
+            </LinearLayout>
         </LinearLayout>
 
 
