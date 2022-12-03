@@ -19,6 +19,12 @@
         android:theme="@style/Theme.Project_app_thu_cung"
         tools:targetApi="31">
         <activity
+            android:name=".Vi_Tk"
+            android:exported="false" />
+        <activity
+            android:name=".Mua_hang"
+            android:exported="false" />
+        <activity
             android:name=".login"
             android:exported="false" />
         <activity

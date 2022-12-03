@@ -7,8 +7,8 @@
         android:title="Giỏ hàng"
         android:icon="@drawable/ic_baseline_shopping_cart_24"/>
     <item android:id="@+id/action_thongbao"
-        android:title="Thông báo"
-        android:icon="@drawable/ic_baseline_notifications_24"/>
+        android:title="Ví"
+        android:icon="@drawable/ic_baseline_wallet_24"/>
     <item android:id="@+id/action_canhan"
         android:title="Cá nhân"
         android:icon="@drawable/ic_baseline_person_24"/>

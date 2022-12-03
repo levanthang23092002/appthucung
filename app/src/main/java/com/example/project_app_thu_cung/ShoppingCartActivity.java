@@ -6,10 +6,12 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -25,6 +27,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
 
     RecyclerView rc ;
     GioHangAdapter mainAdapter;
+    private ImageView btn_ve;
     private DatabaseReference ref;
     private FirebaseDatabase db;
     private CheckBox ck_tong;
@@ -44,9 +47,18 @@ public class ShoppingCartActivity extends AppCompatActivity {
 
         UI();
         getlistsp();
+        btn_ve.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(ShoppingCartActivity.this,Home.class);
+                startActivity(intent);
+            }
+        });
         muahang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent =new Intent(ShoppingCartActivity.this,Mua_hang.class);
+                startActivity(intent);
             }
         });
     }
@@ -54,6 +66,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
         rc =(RecyclerView) findViewById(R.id.lvGioHang);
         ck_tong=findViewById(R.id.ck_tong);
         muahang = findViewById(R.id.btn_muahang);
+        btn_ve=findViewById(R.id.id_comback_login);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         rc.setLayoutManager(linearLayoutManager);

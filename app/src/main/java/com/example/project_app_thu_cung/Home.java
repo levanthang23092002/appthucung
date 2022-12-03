@@ -102,7 +102,7 @@ public class Home extends AppCompatActivity implements Onclickitem {
                         startActivity(giohang);
                         break;
                     case R.id.note:
-                        Intent thongbao = new Intent(Home.this,DanhGiaActivity.class);
+                        Intent thongbao = new Intent(Home.this,Vi_Tk.class);
                         startActivity(thongbao);
                         break;
                 }
