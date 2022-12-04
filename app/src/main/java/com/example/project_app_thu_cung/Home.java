@@ -18,6 +18,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -43,6 +45,9 @@ public class Home extends AppCompatActivity implements Onclickitem {
     private DrawerLayout mDrawerLayout;
     RecyclerView recyc;
     SanPham sp;
+    SearchView searchView;
+    private ImageButton btntimkiem,btnprofile;
+    private Menu menu;
 
 
     @Override
@@ -51,6 +56,7 @@ public class Home extends AppCompatActivity implements Onclickitem {
         setContentView(R.layout.activity_home);
         initUI();
         getListGioY();
+
 
         btn_gy.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +83,7 @@ public class Home extends AppCompatActivity implements Onclickitem {
             }
         });
 
+
         arrayList = new ArrayList<>();
         mDrawerLayout = findViewById(R.id.drawer_layout);
 
@@ -90,7 +97,7 @@ public class Home extends AppCompatActivity implements Onclickitem {
                     case R.id.mes:
                         break;
                     case R.id.account:
-                        Intent acc = new Intent(Home.this,Thong_tin_ca_nhan.class);
+                        Intent acc = new Intent(Home.this,Lichsu.class);
                         startActivity(acc);
                         break;
                     case R.id.cart:
@@ -107,60 +114,15 @@ public class Home extends AppCompatActivity implements Onclickitem {
             }
         });
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(
-                new NavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(MenuItem menuItem) {
-                        switch (menuItem.getItemId()){
-                            case R.id.mes:
-                                Toast.makeText(Home.this,"Thành công",Toast.LENGTH_SHORT).show();
-                        }
-                        return true;
-                    }
-                });
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        ActionBar actionbar = getSupportActionBar();
-        actionbar.setDisplayHomeAsUpEnabled(true);
-        mDrawerLayout.addDrawerListener(
-                new DrawerLayout.DrawerListener() {
-                    @Override
-                    public void onDrawerSlide(View drawerView, float slideOffset) {
-                        // Respond when the drawer's position changes
-                    }
 
-                    @Override
-                    public void onDrawerOpened(View drawerView) {
-                        // Respond when the drawer is opened
-                    }
 
-                    @Override
-                    public void onDrawerClosed(View drawerView) {
-                        // Respond when the drawer is closed
-                    }
 
-                    @Override
-                    public void onDrawerStateChanged(int newState) {
-                        // Respond when the drawer motion state changes
-                    }
-                }
-        );
+
 
     }
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                mDrawerLayout.openDrawer(GravityCompat.START);
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
-    public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.bottom_nav,menu);
-        return true;
-    }
+
+
     @SuppressLint("WrongViewCast")
     private void initUI(){
         recyc = findViewById(R.id.rcv);
@@ -168,6 +130,10 @@ public class Home extends AppCompatActivity implements Onclickitem {
         btn_pk = findViewById(R.id.btn_phukien);
         btn_qa = findViewById(R.id.btn_quanao);
         btn_ta = findViewById(R.id.btn_thucan);
+
+        btnprofile= findViewById(R.id.img_home_profile);
+        btntimkiem =findViewById(R.id.img_home_timkiem);
+
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyc.setLayoutManager(linearLayoutManager);
@@ -282,4 +248,8 @@ public class Home extends AppCompatActivity implements Onclickitem {
         intent.setClass(Home.this, Ao1Activity.class);
         startActivity(intent);
     }
+
+
+
+
 }

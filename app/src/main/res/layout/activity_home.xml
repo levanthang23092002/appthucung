@@ -10,29 +10,11 @@
     android:background="#FFFFFF"
     tools:context=".Home">
 
-    <FrameLayout
-        android:id="@+id/content_frame"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent" >
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_marginTop="10dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="350dp"
-            android:background="@drawable/ic_menu"
-            android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
-    </FrameLayout>
+
+
 
     <!-- Container for contents of drawer - use NavigationView to make configuration easier -->
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:menu="@menu/menu1"
-        app:headerLayout="@layout/nav_header"
-        android:fitsSystemWindows="true" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -52,14 +34,35 @@
             android:layout_alignParentStart="true"
             android:layout_marginStart="0dp"
             android:orientation="vertical">
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="0dp"
+            android:orientation="horizontal">
 
             <androidx.appcompat.widget.SearchView
                 android:id="@+id/search"
-                android:layout_width="350dp"
+                android:layout_width="270dp"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:queryHint="Nhập từ khóa để tìm kiếm" />
+            <ImageButton
+                android:id="@+id/img_home_timkiem"
+                android:visibility="invisible"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@color/white"
+                app:rippleColor="#FFFF90CB"
+                android:src="@drawable/ic_baseline_search_24"/>
+            <ImageButton
+                android:id="@+id/img_home_profile"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@color/white"
+                app:rippleColor="#FFFF90CB"
+                android:src="@drawable/ic_baseline_person_24"/>
+        </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"

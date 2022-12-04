@@ -36,5 +36,5 @@
     <string name="action_mes">Tin Nhắn</string>
     <string name="action_cart">Giỏ Hàng</string>
     <string name="action_note">Ví</string>
-    <string name="action_acc">Cá Nhân</string>
+    <string name="action_acc">Lịch Sử</string>
 </resources>

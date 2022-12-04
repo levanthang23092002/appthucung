@@ -26,59 +26,48 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShoppingCartActivity extends AppCompatActivity {
-
+public class Lichsu extends AppCompatActivity {
     RecyclerView rc ;
     GioHangAdapter mainAdapter;
     private ImageView btn_ve;
     private DatabaseReference ref;
     private FirebaseDatabase db;
-    private CheckBox ck_tong;
-    private GioHang gioHang;
-    private Button muahang;
+
     private List<GioHang> gioHangList;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shopping_cart);
+        setContentView(R.layout.activity_lichsu);
         ref = FirebaseDatabase.getInstance().getReference();
         UI();
         getlistsp();
         btn_ve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent =new Intent(ShoppingCartActivity.this,Home.class);
+                Intent intent =new Intent(Lichsu.this,Home.class);
                 startActivity(intent);
             }
         });
-        muahang.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent =new Intent(ShoppingCartActivity.this,Mua_hang.class);
-                startActivity(intent);
-            }
-        });
+
         BottomNavigationView bt  = findViewById(R.id.bottom_nav);
-        bt.setSelectedItemId(R.id.cart);
+        bt.setSelectedItemId(R.id.account);
         bt.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 switch (item.getItemId()){
                     case R.id.mes:
-                        Intent hom = new Intent(ShoppingCartActivity.this,Home.class);
+                        Intent hom = new Intent(Lichsu.this,Home.class);
                         startActivity(hom);
                         break;
                     case R.id.account:
-                        Intent acc = new Intent(ShoppingCartActivity.this,Lichsu.class);
-                        startActivity(acc);
                         break;
                     case R.id.cart:
+                        Intent acc = new Intent(Lichsu.this,ShoppingCartActivity.class);
+                        startActivity(acc);
                         break;
                     case R.id.note:
-                        Intent thongbao = new Intent(ShoppingCartActivity.this,Vi_Tk.class);
+                        Intent thongbao = new Intent(Lichsu.this,Vi_Tk.class);
                         startActivity(thongbao);
                         break;
                 }
@@ -88,10 +77,8 @@ public class ShoppingCartActivity extends AppCompatActivity {
         });
     }
     private void UI(){
-        rc =(RecyclerView) findViewById(R.id.lvGioHang);
-        ck_tong=findViewById(R.id.ck_tong);
-        muahang = findViewById(R.id.btn_muahang);
-        btn_ve=findViewById(R.id.id_comback_login);
+        rc =(RecyclerView) findViewById(R.id.lvLichsu);
+        btn_ve=findViewById(R.id.id_lichsu_login);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         rc.setLayoutManager(linearLayoutManager);
@@ -118,7 +105,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(ShoppingCartActivity.this,"get list false",Toast.LENGTH_SHORT).show();
+                Toast.makeText(Lichsu.this,"get list false",Toast.LENGTH_SHORT).show();
             }
         });
     }

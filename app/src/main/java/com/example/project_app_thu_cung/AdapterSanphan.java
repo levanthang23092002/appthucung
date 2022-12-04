@@ -1,5 +1,6 @@
 package com.example.project_app_thu_cung;
 
+import android.content.Context;
 import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,9 +16,14 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 public class AdapterSanphan extends RecyclerView.Adapter<AdapterSanphan.SPViewHoler> {
+    Context context;
     private List<SanPham> listlsp;
     private Onclickitem onclickitem;
 
+    public AdapterSanphan(Context context, List<SanPham> listlsp) {
+        this.context = context;
+        this.listlsp = listlsp;
+    }
 
     Home mainActivity = new Home();
 

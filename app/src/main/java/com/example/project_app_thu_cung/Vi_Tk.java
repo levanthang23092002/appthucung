@@ -95,7 +95,7 @@ public class Vi_Tk extends AppCompatActivity {
         });
 
         BottomNavigationView bt  = findViewById(R.id.bottom_nav);
-        bt.setSelectedItemId(R.id.mes);
+        bt.setSelectedItemId(R.id.note);
         bt.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -106,7 +106,7 @@ public class Vi_Tk extends AppCompatActivity {
                         startActivity(hom);
                         break;
                     case R.id.account:
-                        Intent acc = new Intent(Vi_Tk.this,Thong_tin_ca_nhan.class);
+                        Intent acc = new Intent(Vi_Tk.this,Lichsu.class);
                         startActivity(acc);
                         break;
                     case R.id.cart:

@@ -47,33 +47,7 @@ public class Thong_tin_ca_nhan extends AppCompatActivity implements ValueEventLi
         txtdiachi =(TextView) findViewById(R.id.txtdiachi);
         ref = FirebaseDatabase.getInstance().getReference();
        // Toast.makeText(Thong_tin_ca_nhan.this,apunti.sdt,Toast.LENGTH_SHORT).show();
-        BottomNavigationView bt  = findViewById(R.id.bottom_nav);
-        bt.setSelectedItemId(R.id.mes);
-        bt.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                switch (item.getItemId()){
-                    case R.id.mes:
-                        Intent hom = new Intent(Thong_tin_ca_nhan.this,Home.class);
-                        startActivity(hom);
-                        break;
-                    case R.id.account:
-
-                        break;
-                    case R.id.cart:
-                        Intent giohang = new Intent(Thong_tin_ca_nhan.this,ShoppingCartActivity.class);
-                        startActivity(giohang);
-                        break;
-                    case R.id.note:
-                        Intent thongbao = new Intent(Thong_tin_ca_nhan.this,Vi_Tk.class);
-                        startActivity(thongbao);
-                        break;
-                }
-
-                return true;
-            }
-        });
 
         btn_ve.setOnClickListener(new View.OnClickListener() {
             @Override

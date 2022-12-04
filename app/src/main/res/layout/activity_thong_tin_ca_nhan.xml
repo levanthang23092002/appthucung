@@ -192,20 +192,6 @@
             android:textColor="#D85F9F"
             android:background="@drawable/boder"
             android:text="09000000000"/>
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_nav"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_gravity="bottom"
-            android:background="@color/white"
-            android:itemBackground="#fff"
-            app:itemBackground="@color/white"
-            app:itemIconTint="@color/item_navbar"
-            app:itemTextColor="@color/item_navbar"
-            app:menu="@menu/bottom_nav"
-            />
     </LinearLayout>
 
 
