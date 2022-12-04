@@ -18,7 +18,6 @@ public class AdapterSanphan extends RecyclerView.Adapter<AdapterSanphan.SPViewHo
     private List<SanPham> listlsp;
     private Onclickitem onclickitem;
 
-
     Home mainActivity = new Home();
 
     public AdapterSanphan(List<SanPham> listlsp, Onclickitem onclickitem) {

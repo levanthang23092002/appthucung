@@ -14,7 +14,7 @@ public class detail_sp extends AppCompatActivity {
     Button btn;
     EditText txtnv;
     private DatabaseReference mDatabase;
-    detailSP sanpham;
+    chiTietSanPhamModel sanpham;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +30,7 @@ public class detail_sp extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                sanpham = new detailSP("a","23k","tensp","mô ta","size s","size m","size l","size xl","số sao",txtnv.getText().toString());
+                sanpham = new chiTietSanPhamModel("a","23k","tensp","mô ta","size s","size m","size l","size xl","số sao",txtnv.getText().toString());
                 mDatabase.child("SanPham").child("GoiY").child(txtnv.getText().toString()).setValue(sanpham);
             }
         });
