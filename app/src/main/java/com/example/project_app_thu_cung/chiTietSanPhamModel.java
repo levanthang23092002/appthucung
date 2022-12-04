@@ -1,9 +1,9 @@
 package com.example.project_app_thu_cung;
 
-public class detailSP {
+public class chiTietSanPhamModel {
     public String hinh, gia, tensp, mota, sizes, sizem, sizel, sizexl, sosao, id;
 
-    public detailSP(String hinh, String gia, String tensp, String mota, String sizes, String sizem, String sizel, String sizexl, String sosao, String id) {
+    public chiTietSanPhamModel(String hinh, String gia, String tensp, String mota, String sizes, String sizem, String sizel, String sizexl, String sosao, String id) {
         this.hinh = hinh;
         this.gia = gia;
         this.tensp = tensp;
@@ -16,7 +16,7 @@ public class detailSP {
         this.id = id;
     }
 
-    public detailSP() {
+    public chiTietSanPhamModel() {
     }
 
     public String getHinh() {

@@ -43,7 +43,7 @@
             android:name=".nhapThongTin"
             android:exported="false" />
         <activity
-            android:name=".Ao1Activity"
+            android:name=".ChiTietSanPhamActivity"
             android:exported="false" />
         <activity
             android:name=".DanhGiaActivity"

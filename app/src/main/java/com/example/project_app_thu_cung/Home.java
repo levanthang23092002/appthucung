@@ -245,7 +245,7 @@ public class Home extends AppCompatActivity implements Onclickitem {
     @Override
     public void onItemClick(Class<chi_tiet_san_pham> note) {
         Intent intent = new Intent();
-        intent.setClass(Home.this, Ao1Activity.class);
+        intent.setClass(Home.this, ChiTietSanPhamActivity.class);
         startActivity(intent);
     }
 

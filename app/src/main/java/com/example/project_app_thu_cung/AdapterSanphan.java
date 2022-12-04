@@ -24,9 +24,7 @@ public class AdapterSanphan extends RecyclerView.Adapter<AdapterSanphan.SPViewHo
         this.context = context;
         this.listlsp = listlsp;
     }
-
     Home mainActivity = new Home();
-
     public AdapterSanphan(List<SanPham> listlsp, Onclickitem onclickitem) {
         this.listlsp = listlsp;
         this.onclickitem = onclickitem;
