@@ -24,7 +24,6 @@ public class DanhGiaAdapter extends RecyclerView.Adapter<DanhGiaAdapter.DanhGiaV
     @Override
     public DanhGiaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_danhgia, parent, false);
-
         return new DanhGiaViewHolder(view);
     }
 
@@ -50,7 +49,6 @@ public class DanhGiaAdapter extends RecyclerView.Adapter<DanhGiaAdapter.DanhGiaV
 
     public class DanhGiaViewHolder extends RecyclerView.ViewHolder {
         TextView ten, thoigian, noidung;
-
         public DanhGiaViewHolder(@NonNull View itemView) {
             super(itemView);
             ten = itemView.findViewById(R.id.ten);

@@ -7,14 +7,18 @@
         <entry key="..\:/HocKy1_nam3_chuan/TONG-HOP-BAI-CUOI-KY/appthucung/app/src/main/res/layout/activity_chitietao1.xml" value="0.2" />
         <entry key="..\:/HocKy1_nam3_chuan/TONG-HOP-BAI-CUOI-KY/appthucung/app/src/main/res/layout/activity_ct_san_pham.xml" value="0.2" />
         <entry key="..\:/HocKy1_nam3_chuan/TONG-HOP-BAI-CUOI-KY/appthucung/app/src/main/res/layout/activity_danh_gia.xml" value="0.20260416666666667" />
+        <entry key="..\:/HocKy1_nam3_chuan/TONG-HOP-BAI-CUOI-KY/appthucung/app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="..\:/HocKy1_nam3_chuan/TONG-HOP-BAI-CUOI-KY/appthucung/app/src/main/res/layout/activity_lichsu.xml" value="0.19270833333333334" />
+        <entry key="..\:/HocKy1_nam3_chuan/TONG-HOP-BAI-CUOI-KY/appthucung/app/src/main/res/layout/activity_loading.xml" value="0.19270833333333334" />
+        <entry key="..\:/HocKy1_nam3_chuan/TONG-HOP-BAI-CUOI-KY/appthucung/app/src/main/res/layout/activity_login.xml" value="0.19270833333333334" />
+        <entry key="..\:/HocKy1_nam3_chuan/TONG-HOP-BAI-CUOI-KY/appthucung/app/src/main/res/layout/activity_vi_tk.xml" value="0.2" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/drawable/ic_baseline_not_listed_location_24.xml" value="0.1" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/drawable/mua_hang1.xml" value="0.1" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/activity_chitietao1.xml" value="0.2" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/activity_danh_gia.xml" value="0.27447916666666666" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/activity_detail_sp.xml" value="0.27447916666666666" />
-        <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/activity_home.xml" value="0.128125" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/activity_item_shopping_cart.xml" value="0.27447916666666666" />
-        <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/activity_lichsu.xml" value="0.1140625" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/activity_login.xml" value="0.27447916666666666" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/activity_ma_otp.xml" value="0.27447916666666666" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/activity_main.xml" value="0.27447916666666666" />
@@ -22,10 +26,10 @@
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/activity_nhap_thong_tin.xml" value="0.27447916666666666" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/activity_profile.xml" value="0.27447916666666666" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/activity_shopping_cart.xml" value="0.1" />
-        <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/activity_thong_tin_ca_nhan.xml" value="0.2" />
+        <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/activity_thong_tin_ca_nhan.xml" value="0.22037037037037038" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/activity_tro_giup_chi_tiet.xml" value="0.27447916666666666" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/activity_trung_tam_ho_tro.xml" value="0.27447916666666666" />
-        <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/activity_vi_tk.xml" value="0.1" />
+        <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/activity_vi_tk.xml" value="0.14010416666666667" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/diglog_finish.xml" value="0.20092592592592592" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/diglog_ntt.xml" value="0.20092592592592592" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/fragment_danhgia.xml" value="0.20092592592592592" />
@@ -38,10 +42,8 @@
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/item_vi.xml" value="0.14010416666666667" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/layout/listout.xml" value="0.27025641025641023" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/menu/bottom_nav.xml" value="0.27447916666666666" />
-        <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/menu/menu.xml" value="0.2734375" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/menu/menu1.xml" value="0.27447916666666666" />
         <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/menu/menu_nav.xml" value="0.27447916666666666" />
-        <entry key="..\:/wordSpace/hoc_ki_5/cuoikiadroid/appthucung/app/src/main/res/menu/search.xml" value="0.27447916666666666" />
         <entry key="..\:/wordSpace/hoc_ki_5/thlttdd/project_app_thu_cung/app/src/main/res/drawable-v24/border_img.xml" value="0.124" />
         <entry key="..\:/wordSpace/hoc_ki_5/thlttdd/project_app_thu_cung/app/src/main/res/drawable-v24/dialog_name.xml" value="0.2295" />
         <entry key="..\:/wordSpace/hoc_ki_5/thlttdd/project_app_thu_cung/app/src/main/res/drawable-v24/ic_baseline_account_circle_24.xml" value="0.124" />

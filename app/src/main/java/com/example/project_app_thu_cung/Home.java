@@ -246,10 +246,7 @@ public class Home extends AppCompatActivity implements Onclickitem {
     public void onItemClick(Class<chi_tiet_san_pham> note) {
         Intent intent = new Intent();
         intent.setClass(Home.this, ChiTietSanPhamActivity.class);
+        Bundle bundle = new Bundle();
         startActivity(intent);
     }
-
-
-
-
 }
